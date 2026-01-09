@@ -2,19 +2,37 @@
 
 /* STEP 1: Named Selector
 ------------------------------------------------------- */
-
+h2 {
+    color: red;
+    font-weight: normal;
+    text-decoration: underline;
+}
 
 /* STEP 2: ID Selector
 ------------------------------------------------------- */
-
+#special {
+    color: blue;
+}
 
 /* STEP 3: Class Selector
 ------------------------------------------------------- */
+.project {
+    background-color: lightgrey;
+}
 
+.about {
+    border: 5px dashed black;
+}
 
 /* STEP 4: Contextual/Descendent Selector
 ------------------------------------------------------- */
+section p {
+    color: cyan;
+}
 
+.about p a {
+    background-color: orange;
+}
 
 /* STEP 5: Grouped Selector
 ------------------------------------------------------- */
