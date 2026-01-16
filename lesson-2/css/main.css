@@ -4,10 +4,13 @@
 
 html {
 	/* STEP 2: Set base font size */
+	font-size: 16px;
 	
 	/* STEP 3: Set base line-height (leading) */
-	
+	line-height: 1.5px;
+
 	/* STEP 4: Set base font-family (font stack) */
+	font-family: Arial, Helvetica, sans-serif;
 
 	background: #111;
 	/* STEP 10a: set the background image */
