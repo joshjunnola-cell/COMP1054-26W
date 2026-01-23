@@ -1,4 +1,9 @@
 /* Sets font for main headers and text at top */
+body{
+    max-width: 1200px;
+    display: inline;
+    align-items: center;
+}
 
 h1, h2, header > p {
     font-family: 'Libre Franklin', sans-serif;
