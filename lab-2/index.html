@@ -13,13 +13,13 @@ to match as closely as you can with the colors
 on the FIRST paint swatch card provided.
 -------------------------------------------------- */
 	#hex div:nth-of-type(1) {
-		background-color: red;
+		background-color: #ec899b;
 	}
 	#hex div:nth-of-type(2) {
-		background-color: orange;
+		background-color: #ffd6d2;
 	}
 	#hex div:nth-of-type(3) {
-		background-color: yellow;
+		background-color: #f8cdd9;
 	}
 	#hex div:nth-of-type(4) {
 		background-color: limegreen;
@@ -38,7 +38,10 @@ to match as closely as you can with the colors
 on the THIRD paint swatch card provided.
 -------------------------------------------------- */
 	#hsla div:nth-of-type(1) {
-		background-color: red;
+		background-color: hsl(20 85% 32%);
+	}
+	#hsla div:nth-of-type(2) {
+		background-color: hsl(9 61% 51%);
 	}
 	/* ...and so on... */
 
@@ -50,8 +53,14 @@ produce an exact rendition of the swatch colors on the FOURTH card provided.
 (https://developer.mozilla.org/en-US/docs/Web/CSS/filter).
 -------------------------------------------------- */
 	#keyword div:nth-of-type(1) {
-		background-color: red;
+		background-color: red; 
 	}
+	#keyword div:nth-of-type(3) {
+		background-color: rgb(137, 137, 137); 
+		filter: brightness(120%);
+		filter: saturate(140%);
+	}
+	
 	/* ...and so on... */
 
 	/* STEP 5: Describe one or more things that you can do to ensure that the colour rendering on your screen is exactly the same (or as close as possible) to the colours on your paint chip cards. If possible, attempt to do one or more of these things and describe what you did and what you found out. Maybe a screenshot, too if it might help. */
@@ -66,16 +75,16 @@ produce an exact rendition of the swatch colors on the FOURTH card provided.
 		<section id="hex">
 			<h2>Hexadecimal</h2>
 			<div>
-				<h3>Type colour name here</h3>
+				<h3>Candy Fluff</h3>
 			</div>
 			<div>
-				<h3>Type colour name here</h3>
+				<h3>Rosewater</h3>
 			</div>
 			<div>
-				<h3>Type colour name here</h3>
+				<h3>Candy Necklace</h3>
 			</div>
 			<div>
-				<h3>Type colour name here</h3>
+				<h3>Tropical Rose</h3>
 			</div>
 		</section>
 		<section id="rgba">
