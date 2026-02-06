@@ -4,6 +4,7 @@ body {
 }
 main section:nth-child(1) img:hover {
     /* STEP 1: blur() */
+    
 }
 main section:nth-child(2) img:hover {
     /* STEP 2: brightness() */
