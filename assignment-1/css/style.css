@@ -9,23 +9,41 @@ html {
 }
 
 header {
-    display: flow-root;
     width: 100%;
+    display: grid;
     grid-area: header;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: end;
+    gap: 1rem;
+}
+
+header img {
+    align-self: flex-end;
+}
+
+header h1 {
+    align-self: center;
+    font-size: 3em;
+}
+
+header + h1, h2{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 body {
+    background: #0e0e0e;
+    color: #e5e5e5;
     margin: 0 auto;
     display: grid;
     width: 95%;
     grid-template-areas: 
         "header header header"
-        "aside article footer" 
-        "aside article footer"
+        "article article aside" 
+        "footer footer footer"
     ;
-    grid-template-rows: 125px auto 200px;
+    grid-template-rows: 640px auto 250px;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 1rem;
 }
@@ -37,6 +55,23 @@ main {
     align-items: center;
 }
 
+header, aside, article, footer {
+    background: #1a1a1a;
+}
+
 aside {
     grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+article p {
+    margin: 0.35rem 0;
+    line-height: 1.5;
+}
+
+section {
+    margin-bottom: 2rem;
 }
