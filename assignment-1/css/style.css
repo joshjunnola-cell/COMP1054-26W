@@ -8,7 +8,7 @@ html {
     box-sizing: inherit;
 }
 
-header {
+body > header {
     width: 100%;
     display: grid;
     grid-area: header;
@@ -16,20 +16,23 @@ header {
     grid-template-rows: 1fr 1fr;
     align-items: end;
     gap: 1rem;
+    padding: 2rem;
+    background: linear-gradient(to bottom, #111 0%, #1a1a1a 100%);
 }
 
 header img {
-    align-self: flex-end;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 header h1 {
-    align-self: center;
+    grid-column: 2;
+    grid-row: 2;
     font-size: 3em;
 }
 
-header + h1, h2{
-    display: flex;
-    flex-direction: column;
+header h2 {
+    font-size: 2em;
 }
 
 body {
@@ -43,9 +46,10 @@ body {
         "article article aside" 
         "footer footer footer"
     ;
-    grid-template-rows: 640px auto 250px;
+    grid-template-rows: 520px auto 250px;
     grid-template-columns: 1fr 2fr 1fr;
     gap: 1rem;
+    background-image: url("/assignment-1/images/black-orchid.png"); /* Black Orchid by Hybridixstudio. https://www.transparenttextures.com/ */
 }
 
 main {
@@ -55,8 +59,16 @@ main {
     align-items: center;
 }
 
-header, aside, article, footer {
-    background: #1a1a1a;
+aside, article, footer {
+    background: #141414;
+    border: 1px solid #222;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+    padding: 1.5rem;
+}
+
+h2, h3, h4 {
+    color: #b33939;
+    letter-spacing: 1px;
 }
 
 aside {
