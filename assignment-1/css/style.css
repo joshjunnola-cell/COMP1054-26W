@@ -22,8 +22,8 @@ body>header {
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
     padding: 2rem 3rem;
-    background: linear-gradient(to bottom, #0b0b0b 0%, #1a1a1a 100%);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+    background: linear-gradient(to bottom, rgb(195 63 90) 0%, #1a1a1a 100%);
+    box-shadow: 0 20px 40px rgba(195, 63, 90, 0.5);
 }
 
 body>header::after {
@@ -63,7 +63,6 @@ header h2 {
     text-shadow: 4px 3px 8px rgba(0, 0, 0, 0.8);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #e5e5e5;
-    text-transform: none;
 }
 
 header h1 {
@@ -93,7 +92,7 @@ body {
         "article article aside"
         "footer footer footer"
     ;
-    grid-template-rows: auto auto 250px;
+    grid-template-rows: auto auto auto;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 1rem;
     letter-spacing: 1.2px;
@@ -126,6 +125,7 @@ main {
     font-size: 1.2rem;
     max-width: 70ch;
     margin: auto;
+    padding-bottom: 1rem;
 }
 
 aside,
@@ -150,17 +150,12 @@ blockquote {
     opacity: 0.9;
 }
 
-cite {
-    display: block;
-}
-
 h3,
 h4 {
     /* For headers */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-shadow: 0 1px 0 #000,
         0 -1 0 rgba(255, 255, 255, 0.1);
-    text-transform: none;
 }
 
 h3 {
@@ -199,7 +194,10 @@ aside>article {
 footer {
     /* */
     grid-area: footer;
-    margin-bottom: 1rem;
+}
+
+footer section:nth-of-type(2) {
+    border-top: 4px solid rgba(255, 255, 255, 0.25);
 }
 
 article p {
@@ -207,9 +205,22 @@ article p {
 }
 
 section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+footer blockquote {
+    border: none;
+    color: rgba(189, 62, 87, 0.5);
+    opacity: 1;
+    filter:brightness(1.2);
+    text-shadow: 2px 3px 6px rgba(128, 0, 22, 0.7);
+    padding-bottom: 0.3rem;
 }
 
 a {
     color: white;
+}
+
+a:hover {
+    color: rgba(248, 101, 130, 0.6);
 }
