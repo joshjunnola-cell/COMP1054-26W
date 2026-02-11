@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-html {
+html {/* So everything is border-box */
     box-sizing: border-box;
 }
 
@@ -10,7 +10,7 @@ html {
     box-sizing: inherit;
 }
 
-body > header {
+body > header { /* body header text and display properties */
     width: 100%;
     position: relative;
     display: grid;
@@ -24,7 +24,7 @@ body > header {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
 }
 
-body > header::after {
+body > header::after {/* Radial gradiant over header */
     content: "";
     position: absolute;
     inset: 0;
@@ -37,7 +37,7 @@ body > header::after {
     z-index: 4;
 }
 
-header img:first-of-type {
+header img:first-of-type {/* Header images */
     filter: brightness(0.75) contrast(1.2) saturate(1.1) hue-rotate(-8deg);
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
@@ -52,10 +52,13 @@ header img:nth-of-type(2) {
 }
 
 header h1,
-header h2 {
+header h2 { /* Header text */
     margin: 0;
     z-index: 5;
     text-shadow: 4px 3px 8px rgba(0, 0, 0, 0.8);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #e5e5e5;
+    text-transform: none;
 }
 
 header h1 {
@@ -74,7 +77,7 @@ header h2 {
     margin:  auto 0 -0.3em 0.4em;
 }
 
-body {
+body { /* breaks up everything into a grid, includes background, and other properties for elements that are a child of body that can be inherited. */
     color: #e5e5e5;
     margin: 0 auto;
     display: grid;
@@ -95,7 +98,7 @@ body {
     /* Black Orchid by Hybridixstudio. https://www.transparenttextures.com/ */
 }
 
-body::before {
+body::before { /* makes a slight overlay effect across all elements in body. */
     content: "";
     position: fixed;
     inset: 0;
@@ -105,7 +108,7 @@ body::before {
     z-index: 0;
 }
 
-main {
+main { /* main area */
     grid-area: article;
     display: flex;
     flex-direction: column;
@@ -119,15 +122,17 @@ main {
 
 aside,
 article,
-footer {
+footer { /* slight box effect for text area's under header. */
     background: #141414;
     border: 1px solid #222;
     box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.35),
         0 5px 14px rgba(0,0,0,0.45);
     padding: 1.5rem;
+    border-top: 2px solid rgba(255,255,255,0.25);
+    border-bottom: 2px solid rgba(255,255,255,0.25);
 }
 
-blockquote {
+blockquote { /* makes the outro of the song pop a lot more */
     margin-left: 1rem;
     padding-left: 1.25rem;
     border-left: 4px solid #b33939;
@@ -139,23 +144,35 @@ cite {
     display: block;
 }
 
-h1,
-h2,
 h3,
-h4 {
+h4 { /* For headers */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #b33939;
-    font-weight: 600;
+    text-shadow: 0 1px 0 #000,
+        0 -1 0 rgba(255,255,255,0.1);
     text-transform: none;
 }
 
-h3,
-h4 {
-    text-decoration: underline rgba(255,255,255,0.25);
-    font-size: 1.4rem;
+h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #f0f0f0;
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+    border-bottom: 2px solid rgba(180,60,60,0.4);
 }
 
-aside {
+h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #c9c9c9;
+    margin-bottom: 0.5rem;
+    margin-top: 1.8rem;
+    text-transform: uppercase;
+    text-decoration: underline rgba(255,255,255,0.3);
+}
+
+aside { /* Aside sections */
     grid-area: aside;
     line-height: 1.5;
     font-size: 1.1rem;
@@ -167,7 +184,7 @@ aside > article {
     border-bottom: 2px solid rgba(255,255,255,0.25);
 }
 
-footer {
+footer { /* */
     grid-area: footer;
     margin-bottom: 1rem;
 }
