@@ -12,35 +12,33 @@ html {
 
 body > header {
     width: 100%;
-    overflow: visible;
     position: relative;
     display: grid;
     align-items: end;
     grid-area: header;
     grid-template-columns: 200px 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto 1fr auto;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2rem 3rem;
     background: linear-gradient(to bottom, #0b0b0b 0%, #1a1a1a 100%);
-    margin: auto;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
 }
 
-header::after {
+body > header::after {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.45)100%);
     mask-image: linear-gradient(to bottom, #1a1a1a 88%, transparent),
-        linear-gradient(to right, #1a1a1a 97.5%, transparent),
-        linear-gradient(to left, #1a1a1a 97.5%, transparent);
+        linear-gradient(to right, #1a1a1a 97%, transparent),
+        linear-gradient(to left, #1a1a1a 97%, transparent);
     mask-composite: intersect;
     pointer-events: none;
     z-index: 4;
 }
 
 header img:first-of-type {
-    filter: brightness(0.75) contrast(1.2);
+    filter: brightness(0.75) contrast(1.2) saturate(1.1) hue-rotate(-8deg);
     grid-column: 1 / span 2;
     grid-row: 1 / span 3;
     z-index: 2;
@@ -61,17 +59,19 @@ header h2 {
 }
 
 header h1 {
-    font-size: 4em;
+    font-size: 3em;
     grid-column: 2;
     grid-row: 3;
-    padding-left: 3em;
+    margin-left: 4.5em;
+    padding-bottom: 0.5em;
+    font-family: 'Rock Salt', sans-serif;
 }
 
 header h2 {
     font-size: 3em;
     grid-column: 1;
     grid-row: 2;
-    margin-left: 0.2em;
+    margin:  auto 0 -0.3em 0.4em;
 }
 
 body {
@@ -87,10 +87,22 @@ body {
     grid-template-rows: auto auto 250px;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 1rem;
-    letter-spacing: 1.4px;
-    line-height: 1.5;
+    letter-spacing: 1.2px;
+    line-height: 1.65;
     background: #0e0e0e url("/assignment-1/images/black-orchid.png");
+    background-size: 350px;
+    background-blend-mode: multiply;
     /* Black Orchid by Hybridixstudio. https://www.transparenttextures.com/ */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 10, 10, 0.18);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 0;
 }
 
 main {
@@ -100,7 +112,9 @@ main {
     align-items: center;
     gap: 2rem;
     padding-top: 1rem;
-    font-size: 1.1em;
+    font-size: 1.2rem;
+    max-width: 70ch;
+    margin: auto;
 }
 
 aside,
@@ -108,15 +122,17 @@ article,
 footer {
     background: #141414;
     border: 1px solid #222;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.35),
+        0 5px 14px rgba(0,0,0,0.45);
     padding: 1.5rem;
 }
 
 blockquote {
     margin-left: 1rem;
-    padding-left: 1rem;
-    border-left: 3px solid #b33939;
+    padding-left: 1.25rem;
+    border-left: 4px solid #b33939;
     font-style: italic;
+    opacity: 0.9;
 }
 
 cite {
@@ -129,26 +145,31 @@ h3,
 h4 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #b33939;
-    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: none;
 }
 
 h3,
 h4 {
-    text-decoration: underline lightgray;
+    text-decoration: underline rgba(255,255,255,0.25);
     font-size: 1.4rem;
 }
 
 aside {
     grid-area: aside;
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: auto auto;
-    margin-top: 1rem;
     line-height: 1.5;
-    letter-spacing: 1.4px;
+    font-size: 1.1rem;
+    margin: auto;
+}
+
+aside > article {
+    border-top: 2px solid rgba(255,255,255,0.25);
+    border-bottom: 2px solid rgba(255,255,255,0.25);
 }
 
 footer {
     grid-area: footer;
+    margin-bottom: 1rem;
 }
 
 article p {
@@ -157,4 +178,8 @@ article p {
 
 section {
     margin-bottom: 2rem;
+}
+
+a {
+    color: white;
 }
