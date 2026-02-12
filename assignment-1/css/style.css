@@ -209,10 +209,10 @@ section {
 
 footer blockquote {
     border: none;
-    color: rgba(189, 62, 87, 0.5);
+    color: rgba(234, 24, 24, 0.5);
     opacity: 1;
     filter:brightness(1.2);
-    text-shadow: 2px 3px 6px rgba(128, 0, 22, 0.7);
+    text-shadow: 2px 3px 4px rgba(107, 25, 39, 0.7);
     padding-bottom: 0.3rem;
 }
 
