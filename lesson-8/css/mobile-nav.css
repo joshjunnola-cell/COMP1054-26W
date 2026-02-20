@@ -83,6 +83,7 @@ main {
 	margin: 100px auto;
 	padding: 20px;
 	/* STEP 18b: We don't want the measure of the lines of body text to get too long - let's set a max-width on the MAIN element */
+	/* min-width: 250px; */
 	max-width: 768px;
 }
 footer {
