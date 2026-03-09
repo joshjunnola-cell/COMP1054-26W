@@ -29,7 +29,7 @@ main { /* Grid display */
     grid-gap: 2rem;
     grid-template-areas: 
         "aside article"
-        "aside article";
+        "aside articles";
     padding-left: 2rem;
 }
 
@@ -47,6 +47,8 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
     margin: 0;
     line-height: 1;
     font-weight: 500;
+    position: relative;
+    top: -1.2rem;
 }
 
 header h1 { /* Header - homebase */
@@ -54,7 +56,7 @@ header h1 { /* Header - homebase */
     font-weight: bold;
     text-transform: lowercase;
     margin: 0.2rem 0 0 0;
-    line-height: 0.7;
+    line-height: 0.15;
 }
 
 header h1 em {
@@ -62,6 +64,16 @@ header h1 em {
     color: #dd2b2b;
 }
 
+main > article {
+    grid-area: article;
+}
+
+main > article + article {
+    grid-area: articles;
+}
+
 footer {
-    grid-area: footer;
+    position: relative;
+    top: 4.5rem;
+    margin-bottom: 1rem;
 }
