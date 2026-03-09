@@ -25,7 +25,7 @@ html {
 main { /* Grid display */
     grid-area: main;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.4fr 2fr;
     grid-gap: 2rem;
     grid-template-areas: 
         "aside article"
@@ -52,7 +52,7 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
 }
 
 header h1 { /* Header - homebase */
-    font-size: 3.7rem;
+    font-size: 4rem;
     font-weight: bold;
     text-transform: lowercase;
     margin: 0.2rem 0 0 0;
@@ -68,8 +68,33 @@ main > article {
     grid-area: article;
 }
 
+article > h2 {
+    color: #db1717;
+}
+
+article + article > h2 {
+    color: black;
+    font-weight: 100;
+    font-size: 3rem;
+}
+
 main > article + article {
     grid-area: articles;
+}
+
+main > aside {
+    max-width: 175px;
+    border-right: 1px solid lightgrey;
+    padding-right: 1rem
+}
+
+main > aside + aside {
+    max-width: 255px;
+    border-style: none;
+}
+
+aside h2 {
+    color: #db1717;
 }
 
 footer {
