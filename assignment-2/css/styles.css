@@ -7,12 +7,12 @@ html {
     box-sizing: border-box;
 }
 
-#container {
+#container { /* Creates outer border around the whole page */
     margin: 2rem 0 2rem 2rem;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-top: 1px solid black;
-    padding: 2rem;
+    padding: 0 2rem 2rem 0;
     max-width: 900px;
 }
 
@@ -22,26 +22,46 @@ html {
     box-sizing: inherit;
 }
 
-main {
+main { /* Grid display */
+    grid-area: main;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 2rem;
     grid-template-areas: 
-        "header header"
         "aside article"
-        "footer footer";
+        "aside article";
+    padding-left: 2rem;
 }
 
 header {
-    margin-bottom: 2rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-header p {
+header p { /* Header - SOUTH CENTRAL ONTARIO */
     font-size: 1.1rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
+    margin: 0;
+    line-height: 1;
+    font-weight: 500;
 }
 
-header h1 {
-    grid-area: aside;
+header h1 { /* Header - homebase */
+    font-size: 3.7rem;
+    font-weight: bold;
+    text-transform: lowercase;
+    margin: 0.2rem 0 0 0;
+    line-height: 0.7;
+}
+
+header h1 em {
+    font-style: normal;
+    color: #dd2b2b;
+}
+
+footer {
+    grid-area: footer;
 }
