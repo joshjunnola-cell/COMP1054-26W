@@ -25,7 +25,7 @@ html {
 main { /* Grid display */
     grid-area: main;
     display: grid;
-    grid-template-columns: 1.4fr 2fr;
+    grid-template-columns: 1.4fr 2.65fr;
     grid-gap: 2rem;
     grid-template-areas: 
         "aside article"
@@ -57,47 +57,72 @@ header h1 { /* Header - homebase */
     text-transform: lowercase;
     margin: 0.2rem 0 0 0;
     line-height: 0.15;
+    padding-bottom: 1rem;
 }
 
-header h1 em {
+header h1 em { /* home */
     font-style: normal;
-    color: #dd2b2b;
+    color: #981d1d;
 }
 
-main > article {
+main > article { 
     grid-area: article;
 }
 
-article > h2 {
-    color: #db1717;
+article > h2 { /* A Dog Day Afternoon - top h2 */
+    color: #981d1d;
 }
 
-article + article > h2 {
+article + article > h2 { /* On the slopes - second h2 */
     color: black;
     font-weight: 100;
     font-size: 3rem;
+    margin-bottom: 0;
+}
+
+article > p { /* article paragraphs */
+    font-size: 0.8rem;
+}
+
+article mark {
+    background-color: #bcbbbb;
 }
 
 main > article + article {
     grid-area: articles;
 }
 
-main > aside {
-    max-width: 175px;
-    border-right: 1px solid lightgrey;
-    padding-right: 1rem
+main > aside { /* Aside container */
+    max-width: 220px;
+    border-right: 1px solid #9b9b9b;
+    padding-right: 1rem;
+    font-size: 1.1rem;
 }
 
-main > aside + aside {
-    max-width: 255px;
+main > aside + aside { /* Second aside container */
+    max-width: 218px;
     border-style: none;
+    background-color: #d8d8d8;
+    padding-left: 0.5rem;
 }
 
-aside h2 {
-    color: #db1717;
+aside h2 { /* A-Carolling We Go! */
+    color: #981d1d;
+    font-size: 1.15rem;
+    margin-bottom: 0;
 }
 
-footer {
+aside + aside p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+h3 {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+footer { /* Footer */
     position: relative;
     top: 4.5rem;
     margin-bottom: 1rem;
