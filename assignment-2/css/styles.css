@@ -30,7 +30,6 @@ main { /* Grid display */
     grid-template-areas: 
         "aside article"
         "aside articles";
-    padding-left: 2rem;
 }
 
 header {
@@ -52,7 +51,7 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
 }
 
 header h1 { /* Header - homebase */
-    font-size: 4.5rem;
+    font-size: 4.8rem;
     font-weight: 1000;
     text-transform: lowercase;
     margin: 0;
@@ -61,11 +60,13 @@ header h1 { /* Header - homebase */
     position: relative;
     left: -0.28rem;
     bottom: 0.1rem;
+    color: black;
 }
 
 header h1 em { /* home */
     font-style: normal;
     color: #d42727;
+    filter: saturate(80%);
 }
 
 main > article { 
@@ -79,8 +80,8 @@ article > h2 { /* A Dog Day Afternoon - top h2 */
 }
 
 article + article > h2 { /* On the slopes - second h2 */
-    color: black;
-    font-weight: 100;
+    color: #2c2b2b;
+    font-weight: lighter;
     font-size: 3rem;
     margin-bottom: 0;
     text-transform: lowercase;
@@ -95,7 +96,7 @@ article > p { /* article paragraphs */
 }
 
 article mark { /* highlighted portion in second article's paragraph */
-    background-color: #bcbbbb;
+    background-color: #dddddd;
 }
 
 main > article + article {
@@ -107,28 +108,35 @@ main > aside { /* Aside container */
     border-right: 1px solid #9b9b9b;
     padding-right: 1rem;
     font-size: 1.25rem;
+    padding-left: 2rem;
 }
 
 main > aside + aside { /* Second aside container */
     max-width: 240px;
     border-style: none;
     background-color: #e4e1e1;
-    padding-left: 0.5rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-aside h2::before {
+aside h2::before { /* + sign before aside header pseudo-element */
     content: "+";
-    color: black;
-    font-size: 5rem;
-    font-weight: 50;
+    color: #3b3b3b;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 4rem;
+    line-height: 0.7;
+    margin-left: -0.9rem;
+    display: inline-block;
+    vertical-align: text-bottom;
 }
 
 aside h2 { /* A-Carolling We Go! */
     color: #c02e2e;
     font-size: 1.15rem;
     margin: 0;
+    filter: saturate(80%);
+    letter-spacing: 0.9px;
 }
 
 aside + aside p { /* lower aside paragraphs */
@@ -137,32 +145,42 @@ aside + aside p { /* lower aside paragraphs */
 }
 
 h3 { /* lower aside theatre headers */
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: black;
     margin: 0;
 }
 
 ul { /* list changes */
-    margin: 0.2rem;
-    padding-left: 1rem;
-}
-
-li {
+    margin: 0.3rem 0;
     padding-left: 0.5rem;
 }
 
-li::marker {
+li {
+    padding-left: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+li::marker { /* list marker pseudo-element */
     content: "+"; 
-    
+    font-weight: 300;
+    font-size: 1rem;
 }
 
 footer { /* Footer */
     position: relative;
-    top: 4.5rem;
-    margin-bottom: 1rem;
+    top: 5rem;
 }
 
-a:link {
+footer p {
+    text-transform: lowercase;
+}
+
+footer em {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+a:link { /* link pseudo-classes */
     color: #000;
     font-weight: bold;
     text-decoration: none;
