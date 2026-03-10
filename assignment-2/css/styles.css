@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 html {
-    font-family: "Georgia", serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333;
     box-sizing: border-box;
@@ -53,16 +53,19 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
 
 header h1 { /* Header - homebase */
     font-size: 4rem;
-    font-weight: bold;
+    font-weight: 1000;
     text-transform: lowercase;
-    margin: 0.2rem 0 0 0;
-    line-height: 0.15;
+    margin: 0;
+    line-height: 0.2;
     padding-bottom: 1rem;
+    position: relative;
+    left: -0.23rem;
+    bottom: 0.18rem;
 }
 
 header h1 em { /* home */
     font-style: normal;
-    color: #981d1d;
+    color: #d42727;
 }
 
 main > article { 
@@ -78,6 +81,11 @@ article + article > h2 { /* On the slopes - second h2 */
     font-weight: 100;
     font-size: 3rem;
     margin-bottom: 0;
+    text-transform: lowercase;
+}
+
+article + article > h2::first-letter {
+    text-transform: uppercase;
 }
 
 article > p { /* article paragraphs */
@@ -126,4 +134,15 @@ footer { /* Footer */
     position: relative;
     top: 4.5rem;
     margin-bottom: 1rem;
+}
+
+a:link {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4463ee;
+    text-decoration: underline;
 }
