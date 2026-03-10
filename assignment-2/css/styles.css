@@ -8,9 +8,7 @@ html {
 }
 
 #container { /* Creates outer border around the whole page */
-    margin: 2rem 0 2rem 2rem;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
+    margin: 2rem 0 0 2rem;
     border-top: 1px solid black;
     padding: 0 2rem 2rem 0;
     max-width: 900px;
@@ -28,15 +26,16 @@ main { /* Grid display */
     grid-template-columns: 1.4fr 2.65fr;
     grid-gap: 2rem;
     grid-template-areas: 
-        "aside article"
+        "asides article"
         "aside articles";
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 header {
-    margin: 0 0 2rem 0;
-    padding: 0;
     display: flex;
     flex-direction: column-reverse;
+    border-left: 1px solid black;
 }
 
 header p { /* Header - SOUTH CENTRAL ONTARIO */
@@ -105,28 +104,55 @@ main > article + article {
 
 main > aside { /* Aside container */
     max-width: 240px;
-    border-right: 1px solid #9b9b9b;
-    padding-right: 1rem;
     font-size: 1.25rem;
     padding-left: 2rem;
+    align-items: start;
+    grid-area: asides;
+}
+
+main > aside > p {
+    padding-right: 1rem;
+    border-right: 1px solid #9b9b9b;
+    margin-bottom: 0;
+}
+
+main > aside p + p {
+    margin-top: 0;
+}
+
+a[href*="sceniccaves"] {
+    letter-spacing: 0.3px;
+    font-size: 0;
+}
+
+a[href*="sceniccaves"]::before {
+    content: "www.scenic";
+    font-size: 1.1rem;
+}
+
+a[href*="sceniccaves"]::after {
+    content: "\A caves.com";
+    font-size: 1.1rem;
 }
 
 main > aside + aside { /* Second aside container */
     max-width: 240px;
     border-style: none;
-    background-color: #e4e1e1;
+    background: linear-gradient(to bottom, #dfdddd 50%, #f3f2f2 ) ;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    grid-area: aside;
 }
 
 aside h2::before { /* + sign before aside header pseudo-element */
     content: "+";
     color: #3b3b3b;
     font-family:'Times New Roman', Times, serif;
-    font-size: 4rem;
-    line-height: 0.7;
-    margin-left: -0.9rem;
+    font-size: 3.6rem;
+    line-height: 0.6;
+    margin-left: -0.8rem;
     display: inline-block;
     vertical-align: text-bottom;
 }
@@ -142,6 +168,7 @@ aside h2 { /* A-Carolling We Go! */
 aside + aside p { /* lower aside paragraphs */
     font-size: 0.8rem;
     margin: 0;
+    border: none;
 }
 
 h3 { /* lower aside theatre headers */
@@ -167,8 +194,7 @@ li::marker { /* list marker pseudo-element */
 }
 
 footer { /* Footer */
-    position: relative;
-    top: 5rem;
+    background: #fff;
 }
 
 footer p {
