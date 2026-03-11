@@ -26,8 +26,8 @@ main { /* Grid display */
     grid-template-columns: 1.4fr 2.65fr;
     grid-gap: 2rem;
     grid-template-areas: 
-        "asides article"
-        "aside articles";
+        "aside1 article1"
+        "aside2 article2";
     border-bottom: 1px solid black;
     border-left: 1px solid black;
 }
@@ -50,14 +50,14 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
 }
 
 header h1 { /* Header - homebase */
-    font-size: 4.8rem;
+    font-size: 5.2rem;
     font-weight: 1000;
     text-transform: lowercase;
     margin: 0;
-    line-height: 0.2;
+    line-height: 0.25;
     padding-bottom: 1rem;
     position: relative;
-    left: -0.28rem;
+    left: -0.3rem;
     bottom: 0.1rem;
     color: black;
 }
@@ -68,22 +68,50 @@ header h1 em { /* home */
     filter: saturate(80%);
 }
 
-main > article { 
-    grid-area: article;
+main > article { /* Main article */
+    grid-area: article1;
+    position: relative;
+    margin-top: -1.5rem;
+    max-width: 500px
+}
+
+article:first-of-type {
+    position: relative;
+}
+
+article:first-of-type h2 {
+    margin-top: 80px;
+}
+
+img[src="dog-and-owner.jpg"] { /* Selects top image */
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 220px;
+    height: 110px;
+    object-fit: cover;
+    filter: saturate(70%);
 }
 
 article > h2 { /* A Dog Day Afternoon - top h2 */
-    color: #c73131;
+    color: #bb3434;
     margin: 0;
     font-size: 2rem;
 }
 
 article + article > h2 { /* On the slopes - second h2 */
     color: #2c2b2b;
-    font-weight: lighter;
-    font-size: 3rem;
-    margin-bottom: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 350;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-top: -20px;
     text-transform: lowercase;
+}
+
+img[src="snow-tubing.jpg"] { /* Snow tubing image */
+    width: 100%;
+    filter: saturate(70%);
 }
 
 article + article > h2::first-letter {
@@ -91,7 +119,8 @@ article + article > h2::first-letter {
 }
 
 article > p { /* article paragraphs */
-    font-size: 0.8rem;
+    font-size: 0.84rem;
+    margin-top: -0.6rem;
 }
 
 article mark { /* highlighted portion in second article's paragraph */
@@ -99,18 +128,22 @@ article mark { /* highlighted portion in second article's paragraph */
 }
 
 main > article + article {
-    grid-area: articles;
+    grid-area: article2;
+    margin-top: -120px;
+    margin-bottom: 30px;
 }
 
 main > aside { /* Aside container */
-    max-width: 240px;
+    max-width: 260px;
     font-size: 1.25rem;
     padding-left: 2rem;
     align-items: start;
-    grid-area: asides;
+    grid-area: aside1;
+    padding-top: 40px;
+    margin-bottom: 1rem;
 }
 
-main > aside > p {
+main > aside > p { /* Paragraphs in aside */
     padding-right: 1rem;
     border-right: 1px solid #9b9b9b;
     margin-bottom: 0;
@@ -120,59 +153,61 @@ main > aside p + p {
     margin-top: 0;
 }
 
-a[href*="sceniccaves"] {
+a[href*="sceniccaves"] { /* makes original link disappear */
     letter-spacing: 0.3px;
     font-size: 0;
 }
 
-a[href*="sceniccaves"]::before {
+a[href*="sceniccaves"]::before { /* creates a top line */
     content: "www.scenic";
     font-size: 1.1rem;
+    margin-right: 0.5rem;
 }
 
-a[href*="sceniccaves"]::after {
+a[href*="sceniccaves"]::after { /* creates bottom line */
     content: "\A caves.com";
     font-size: 1.1rem;
 }
 
 main > aside + aside { /* Second aside container */
-    max-width: 240px;
+    max-width: 260px;
     border-style: none;
     background: linear-gradient(to bottom, #dfdddd 50%, #f3f2f2 ) ;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
     height: 100%;
-    grid-area: aside;
+    grid-area: aside2;
+    padding-top: 0;
 }
 
 aside h2::before { /* + sign before aside header pseudo-element */
     content: "+";
-    color: #3b3b3b;
+    color: #3a3a3a;
     font-family:'Times New Roman', Times, serif;
-    font-size: 3.6rem;
-    line-height: 0.6;
+    font-size: 4rem;
+    line-height: 0.7;
     margin-left: -0.8rem;
     display: inline-block;
     vertical-align: text-bottom;
 }
 
-aside h2 { /* A-Carolling We Go! */
+aside h2 { /* A-Carolling We Go! aside header */
     color: #c02e2e;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     margin: 0;
-    filter: saturate(80%);
+    filter: saturate(70%);
     letter-spacing: 0.9px;
 }
 
 aside + aside p { /* lower aside paragraphs */
-    font-size: 0.8rem;
+    font-size: 0.83rem;
     margin: 0;
     border: none;
 }
 
 h3 { /* lower aside theatre headers */
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     color: black;
     margin: 0;
 }
