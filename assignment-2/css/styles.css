@@ -20,6 +20,10 @@ html {
     box-sizing: inherit;
 }
 
+h1, h2, h3, p {
+    margin: 0;
+}
+
 main { /* Grid display */
     grid-area: main;
     display: grid;
@@ -42,7 +46,6 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin: 0;
     line-height: 1;
     font-weight: 500;
     position: relative;
@@ -53,7 +56,6 @@ header h1 { /* Header - homebase */
     font-size: 5.2rem;
     font-weight: 1000;
     text-transform: lowercase;
-    margin: 0;
     line-height: 0.25;
     padding-bottom: 1rem;
     position: relative;
@@ -75,11 +77,7 @@ main > article { /* Main article */
     max-width: 450px;
 }
 
-article:first-of-type {
-    position: relative;
-}
-
-article:first-of-type h2 {
+article:first-of-type h2 { /* moves top h2 and text underneath down */
     margin-top: 75px;
 }
 
@@ -95,11 +93,10 @@ img[src="dog-and-owner.jpg"] { /* Selects top image */
 
 article > h2 { /* A Dog Day Afternoon - top h2 */
     color: #bb3434;
-    margin: 0;
     font-size: 2rem;
 }
 
-article + article > h2 { /* On the slopes - second h2 */
+article + article > h2 { /* On the slopes (makes all lowercase) - second h2 */
     color: #2c2b2b;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 350;
@@ -114,7 +111,7 @@ img[src="snow-tubing.jpg"] { /* Snow tubing image */
     filter: saturate(70%);
 }
 
-article + article > h2::first-letter {
+article + article > h2::first-letter { /* makes first letter only uppercase */
     text-transform: uppercase;
 }
 
@@ -127,7 +124,7 @@ article mark { /* highlighted portion in second article's paragraph */
     background-color: #dddddd;
 }
 
-main > article + article {
+main > article + article { /* controls bottom article position */
     grid-area: article2;
     margin-top: -100px;
     margin-bottom: 30px;
@@ -139,7 +136,7 @@ main > aside { /* Aside container */
     padding-left: 2rem;
     align-items: start;
     grid-area: aside1;
-    padding-top: 40px;
+    padding-top: 60px;
     margin-bottom: 1rem;
 }
 
@@ -195,21 +192,18 @@ aside h2::before { /* + sign before aside header pseudo-element */
 aside h2 { /* A-Carolling We Go! aside header */
     color: #c02e2e;
     font-size: 1.25rem;
-    margin: 0;
     filter: saturate(80%);
     letter-spacing: 0.9px;
 }
 
 aside + aside p { /* lower aside paragraphs */
     font-size: 0.83rem;
-    margin: 0;
     border: none;
 }
 
 h3 { /* lower aside theatre headers */
     font-size: 0.84rem;
     color: black;
-    margin: 0;
 }
 
 ul { /* list changes */
@@ -242,7 +236,7 @@ footer em { /* page number 18 */
     padding-right: 1rem;
 }
 
-footer abbr {
+footer abbr { /* CAA styles in footer */
     margin-right: -0.5ch;
     font-weight: 800;
     text-transform: uppercase;
@@ -263,26 +257,17 @@ a:hover {
 @media screen and (max-width: 480px) { /* media query to target small screens (phones) with max width of 480px - lesson 13 last semester reference */
 	/* small screen styles */
 
-    #container {
+    #container { /* style for container */
         margin: 2rem auto;
         padding: 0 1rem;
         max-width: 100%;
     }
-    
-    body, html {
-    overflow-x: hidden;
-    }
-
-    body {
-        width: 100%;
-    }
 
     header h1 {
         font-size: 4.5rem;
-        margin-top: -0.2rem;
     }
 
-    main { /* collapses everything to one column */
+    main { /* collapses everything to one column and removes left/bottom border */
         display: block;
         border-left: none;
         border-bottom: none;
@@ -292,7 +277,6 @@ a:hover {
     main > article + article { /* makes articles full width */
         max-width: 100%;
         margin: 0;
-        position: static;
     }
 
     img[src="dog-and-owner.jpg"] { /* removes absolute positioning on dog photo, pushes image down */
@@ -315,22 +299,19 @@ a:hover {
         font-size: 1rem;
     }
 
-    a[href*="sceniccaves"]::before { /* creates a top line */
+    a[href*="sceniccaves"]::before { /* removes top line */
         content: "";
-        font-size: 1.1rem;
-        margin-right: 0.5rem;
     }
 
-    a[href*="sceniccaves"]::after { /* creates bottom line */
+    a[href*="sceniccaves"]::after { /* removes bottom line */
         content: "";
-        font-size: 1.1rem;
     }
 
     aside h2 {
         margin-left: 1rem;
     }
 
-    main > aside + aside > p, li {
-        margin-left: .5rem;
+    main > aside + aside > p, li { /* adds a bit of margin in bottom aside paragraph */
+        margin-left: 0.5rem;
     }
 }
