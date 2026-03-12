@@ -65,14 +65,14 @@ header h1 { /* Header - homebase */
 header h1 em { /* home */
     font-style: normal;
     color: #d42727;
-    filter: saturate(80%);
+    filter: saturate(90%);
 }
 
 main > article { /* Main article */
     grid-area: article1;
     position: relative;
     margin-top: -1.5rem;
-    max-width: 500px
+    max-width: 450px;
 }
 
 article:first-of-type {
@@ -80,7 +80,7 @@ article:first-of-type {
 }
 
 article:first-of-type h2 {
-    margin-top: 80px;
+    margin-top: 75px;
 }
 
 img[src="dog-and-owner.jpg"] { /* Selects top image */
@@ -105,7 +105,7 @@ article + article > h2 { /* On the slopes - second h2 */
     font-weight: 350;
     font-size: 3.5rem;
     letter-spacing: 1px;
-    margin-top: -20px;
+    margin-top: -25px;
     text-transform: lowercase;
 }
 
@@ -129,7 +129,7 @@ article mark { /* highlighted portion in second article's paragraph */
 
 main > article + article {
     grid-area: article2;
-    margin-top: -120px;
+    margin-top: -100px;
     margin-bottom: 30px;
 }
 
@@ -196,7 +196,7 @@ aside h2 { /* A-Carolling We Go! aside header */
     color: #c02e2e;
     font-size: 1.25rem;
     margin: 0;
-    filter: saturate(70%);
+    filter: saturate(80%);
     letter-spacing: 0.9px;
 }
 
@@ -236,9 +236,17 @@ footer p {
     text-transform: lowercase;
 }
 
-footer em {
-    font-weight: bold;
+footer em { /* page number 18 */
+    font-weight: 800;
     font-size: 1rem;
+    padding-right: 1rem;
+}
+
+footer abbr {
+    margin-right: -0.5ch;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.6rem;
 }
 
 a:link { /* link pseudo-classes */
@@ -250,4 +258,22 @@ a:link { /* link pseudo-classes */
 a:hover {
     color: #4463ee;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) { /* media query to target small screens (phones) with max width of 480px - lesson 13 last semester reference */
+	/* small screen styles */
+
+    main { /* collapses everything to one column */
+        display: block;
+        border-left: none;
+        border-bottom: none;
+    }
+
+    main > article,
+    main > article + article {
+        max-width: 100%;
+        margin: 0;
+        position: static;
+    }
+
 }
