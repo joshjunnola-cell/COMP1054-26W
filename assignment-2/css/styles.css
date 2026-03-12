@@ -7,7 +7,8 @@ html {
     box-sizing: border-box;
 }
 
-#container { /* Creates outer border around the whole page */
+#container {
+    /* Creates outer border around the whole page */
     margin: 2rem 0 0 2rem;
     border-top: 1px solid black;
     padding: 0 2rem 2rem 0;
@@ -20,16 +21,20 @@ html {
     box-sizing: inherit;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
     margin: 0;
 }
 
-main { /* Grid display */
+main {
+    /* Grid display */
     grid-area: main;
     display: grid;
     grid-template-columns: 1.4fr 2.65fr;
     grid-gap: 2rem;
-    grid-template-areas: 
+    grid-template-areas:
         "aside1 article1"
         "aside2 article2";
     border-bottom: 1px solid black;
@@ -42,7 +47,8 @@ header {
     border-left: 1px solid black;
 }
 
-header p { /* Header - SOUTH CENTRAL ONTARIO */
+header p {
+    /* Header - SOUTH CENTRAL ONTARIO */
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -52,7 +58,8 @@ header p { /* Header - SOUTH CENTRAL ONTARIO */
     top: -1.2rem;
 }
 
-header h1 { /* Header - homebase */
+header h1 {
+    /* Header - homebase */
     font-size: 5.2rem;
     font-weight: 1000;
     text-transform: lowercase;
@@ -64,24 +71,28 @@ header h1 { /* Header - homebase */
     color: black;
 }
 
-header h1 em { /* home */
+header h1 em {
+    /* home */
     font-style: normal;
     color: #d42727;
     filter: saturate(90%);
 }
 
-main > article { /* Main article */
+main>article {
+    /* Main article */
     grid-area: article1;
     position: relative;
     margin-top: -1.5rem;
     max-width: 450px;
 }
 
-article:first-of-type h2 { /* moves top h2 and text underneath down */
+article:first-of-type h2 {
+    /* moves top h2 and text underneath down */
     margin-top: 75px;
 }
 
-img[src="dog-and-owner.jpg"] { /* Selects top image */
+img[src="dog-and-owner.jpg"] {
+    /* Selects top image */
     position: absolute;
     top: -30px;
     right: 0;
@@ -91,14 +102,16 @@ img[src="dog-and-owner.jpg"] { /* Selects top image */
     filter: saturate(70%);
 }
 
-article > h2 { /* A Dog Day Afternoon - top h2 */
+article>h2 {
+    /* A Dog Day Afternoon - top h2 */
     color: #bb3434;
     font-size: 2rem;
 }
 
-article + article > h2 { /* On the slopes (makes all lowercase) - second h2 */
+article+article>h2 {
+    /* On the slopes (makes all lowercase) - second h2 */
     color: #2c2b2b;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 350;
     font-size: 3.5rem;
     letter-spacing: 1px;
@@ -106,31 +119,37 @@ article + article > h2 { /* On the slopes (makes all lowercase) - second h2 */
     text-transform: lowercase;
 }
 
-img[src="snow-tubing.jpg"] { /* Snow tubing image */
+img[src="snow-tubing.jpg"] {
+    /* Snow tubing image */
     width: 100%;
     filter: saturate(70%);
 }
 
-article + article > h2::first-letter { /* makes first letter only uppercase */
+article+article>h2::first-letter {
+    /* makes first letter only uppercase */
     text-transform: uppercase;
 }
 
-article > p { /* article paragraphs */
+article>p {
+    /* article paragraphs */
     font-size: 0.84rem;
     margin-top: -0.6rem;
 }
 
-article mark { /* highlighted portion in second article's paragraph */
+article mark {
+    /* highlighted portion in second article's paragraph */
     background-color: #dddddd;
 }
 
-main > article + article { /* controls bottom article position */
+main>article+article {
+    /* controls bottom article position */
     grid-area: article2;
     margin-top: -100px;
     margin-bottom: 30px;
 }
 
-main > aside { /* Aside container */
+main>aside {
+    /* Aside container */
     max-width: 260px;
     font-size: 1.25rem;
     padding-left: 2rem;
@@ -140,36 +159,41 @@ main > aside { /* Aside container */
     margin-bottom: 1rem;
 }
 
-main > aside > p { /* Paragraphs in aside */
+main>aside>p {
+    /* Paragraphs in aside */
     padding-right: 1rem;
     border-right: 1px solid #9b9b9b;
     margin-bottom: 0;
 }
 
-main > aside p + p {
+main>aside p+p {
     margin-top: 0;
 }
 
-a[href*="sceniccaves"] { /* makes original link disappear */
+a[href*="sceniccaves"] {
+    /* makes original link disappear */
     letter-spacing: 0.3px;
     font-size: 0;
 }
 
-a[href*="sceniccaves"]::before { /* creates a top line */
+a[href*="sceniccaves"]::before {
+    /* creates a top line */
     content: "www.scenic";
     font-size: 1.1rem;
     margin-right: 0.5rem;
 }
 
-a[href*="sceniccaves"]::after { /* creates bottom line */
+a[href*="sceniccaves"]::after {
+    /* creates bottom line */
     content: "\A caves.com";
     font-size: 1.1rem;
 }
 
-main > aside + aside { /* Second aside container */
+main>aside+aside {
+    /* Second aside container */
     max-width: 260px;
     border-style: none;
-    background: linear-gradient(to bottom, #dfdddd 50%, #f3f2f2 ) ;
+    background: linear-gradient(to bottom, #dfdddd 50%, #f3f2f2);
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -178,10 +202,11 @@ main > aside + aside { /* Second aside container */
     padding-top: 0;
 }
 
-aside h2::before { /* + sign before aside header pseudo-element */
+aside h2::before {
+    /* + sign before aside header pseudo-element */
     content: "+";
     color: #3a3a3a;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 4rem;
     line-height: 0.7;
     margin-left: -0.8rem;
@@ -189,24 +214,28 @@ aside h2::before { /* + sign before aside header pseudo-element */
     vertical-align: text-bottom;
 }
 
-aside h2 { /* A-Carolling We Go! aside header */
+aside h2 {
+    /* A-Carolling We Go! aside header */
     color: #c02e2e;
     font-size: 1.25rem;
     filter: saturate(80%);
     letter-spacing: 0.9px;
 }
 
-aside + aside p { /* lower aside paragraphs */
+aside+aside p {
+    /* lower aside paragraphs */
     font-size: 0.83rem;
     border: none;
 }
 
-h3 { /* lower aside theatre headers */
+h3 {
+    /* lower aside theatre headers */
     font-size: 0.84rem;
     color: black;
 }
 
-ul { /* list changes */
+ul {
+    /* list changes */
     margin: 0.3rem 0;
     padding-left: 0.5rem;
 }
@@ -216,13 +245,15 @@ li {
     margin-bottom: 0.2rem;
 }
 
-li::marker { /* list marker pseudo-element */
-    content: "+"; 
+li::marker {
+    /* list marker pseudo-element */
+    content: "+";
     font-weight: 300;
     font-size: 1rem;
 }
 
-footer { /* Footer */
+footer {
+    /* Footer */
     background: #fff;
 }
 
@@ -230,20 +261,23 @@ footer p {
     text-transform: lowercase;
 }
 
-footer em { /* page number 18 */
+footer em {
+    /* page number 18 */
     font-weight: 800;
     font-size: 1rem;
     padding-right: 1rem;
 }
 
-footer abbr { /* CAA styles in footer */
+footer abbr {
+    /* CAA styles in footer */
     margin-right: -0.5ch;
     font-weight: 800;
     text-transform: uppercase;
     font-size: 0.6rem;
 }
 
-a:link { /* link pseudo-classes */
+a:link {
+    /* link pseudo-classes */
     color: #000;
     font-weight: bold;
     text-decoration: none;
@@ -254,10 +288,12 @@ a:hover {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 480px) { /* media query to target small screens (phones) with max width of 480px - lesson 13 last semester reference */
-	/* small screen styles */
+@media screen and (max-width: 480px) {
+    /* media query to target small screens (phones) with max width of 480px - lesson 13 last semester reference */
+    /* small screen styles */
 
-    #container { /* style for container */
+    #container {
+        /* style for container */
         margin: 2rem auto;
         padding: 0 1rem;
         max-width: 100%;
@@ -267,19 +303,22 @@ a:hover {
         font-size: 4.5rem;
     }
 
-    main { /* collapses everything to one column and removes left/bottom border */
+    main {
+        /* collapses everything to one column and removes left/bottom border */
         display: block;
         border-left: none;
         border-bottom: none;
     }
 
-    main > article,
-    main > article + article { /* makes articles full width */
+    main>article,
+    main>article+article {
+        /* makes articles full width */
         max-width: 100%;
         margin: 0;
     }
 
-    img[src="dog-and-owner.jpg"] { /* removes absolute positioning on dog photo, pushes image down */
+    img[src="dog-and-owner.jpg"] {
+        /* removes absolute positioning on dog photo, pushes image down */
         position: static;
         height: auto;
         margin-top: 1rem;
@@ -287,23 +326,27 @@ a:hover {
         margin-bottom: -5rem;
     }
 
-    main > aside,
-    main > aside + aside { /* makes aside full width */
+    main>aside,
+    main>aside+aside {
+        /* makes aside full width */
         max-width: 100%;
         padding: 0;
         border: none;
     }
 
-    a[href*="sceniccaves"] { /* makes original link disappear */
+    a[href*="sceniccaves"] {
+        /* makes original link disappear */
         letter-spacing: 0.3px;
         font-size: 1rem;
     }
 
-    a[href*="sceniccaves"]::before { /* removes top line */
+    a[href*="sceniccaves"]::before {
+        /* removes top line */
         content: "";
     }
 
-    a[href*="sceniccaves"]::after { /* removes bottom line */
+    a[href*="sceniccaves"]::after {
+        /* removes bottom line */
         content: "";
     }
 
@@ -311,7 +354,9 @@ a:hover {
         margin-left: 1rem;
     }
 
-    main > aside + aside > p, li { /* adds a bit of margin in bottom aside paragraph */
+    main>aside+aside>p,
+    li {
+        /* adds a bit of margin in bottom aside paragraph */
         margin-left: 0.5rem;
     }
 }
