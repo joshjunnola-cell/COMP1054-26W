@@ -83,7 +83,7 @@ main>article {
     grid-area: article1;
     position: relative;
     margin-top: -1.5rem;
-    max-width: 450px;
+    max-width: 495px;
 }
 
 article:first-of-type h2 {
@@ -144,7 +144,7 @@ article mark {
 main>article+article {
     /* controls bottom article position */
     grid-area: article2;
-    margin-top: -100px;
+    margin-top: -140px;
     margin-bottom: 30px;
 }
 
