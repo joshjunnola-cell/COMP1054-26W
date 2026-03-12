@@ -263,6 +263,25 @@ a:hover {
 @media screen and (max-width: 480px) { /* media query to target small screens (phones) with max width of 480px - lesson 13 last semester reference */
 	/* small screen styles */
 
+    #container {
+        margin: 2rem auto;
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+    
+    body, html {
+    overflow-x: hidden;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 4.5rem;
+        margin-top: -0.2rem;
+    }
+
     main { /* collapses everything to one column */
         display: block;
         border-left: none;
@@ -270,10 +289,48 @@ a:hover {
     }
 
     main > article,
-    main > article + article {
+    main > article + article { /* makes articles full width */
         max-width: 100%;
         margin: 0;
         position: static;
     }
 
+    img[src="dog-and-owner.jpg"] { /* removes absolute positioning on dog photo, pushes image down */
+        position: static;
+        height: auto;
+        margin-top: 1rem;
+        width: 100%;
+        margin-bottom: -5rem;
+    }
+
+    main > aside,
+    main > aside + aside { /* makes aside full width */
+        max-width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    a[href*="sceniccaves"] { /* makes original link disappear */
+        letter-spacing: 0.3px;
+        font-size: 1rem;
+    }
+
+    a[href*="sceniccaves"]::before { /* creates a top line */
+        content: "";
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+
+    a[href*="sceniccaves"]::after { /* creates bottom line */
+        content: "";
+        font-size: 1.1rem;
+    }
+
+    aside h2 {
+        margin-left: 1rem;
+    }
+
+    main > aside + aside > p, li {
+        margin-left: .5rem;
+    }
 }
