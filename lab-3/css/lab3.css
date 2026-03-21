@@ -4,15 +4,84 @@
 /* Box-sizing reset (https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
 html {
 	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
-html {
-	font-family: "Open Sans", sans-serif;
-}
 #container {
 	width: 80%;
 	margin: 0 auto;
 }
+
+.tabs {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tabs ul[role="tablist"] {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base tabs */
+.tabs li[role="tab"] a {
+    display: block;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    background: #e0d6d6;
+    color: #333;
+    border: 1px solid #aaa;
+    border-bottom: 2px solid transparent;
+    border-radius: 4px 4px 0 0;
+    margin-right: 0.3rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover */
+.tabs li[role="tab"] a:hover {
+    background: #f5f1f1;
+}
+
+/* Highlight the tab that is currently selected (focus) */
+.tabs li[role="tab"] a:focus {
+    background: #fff;
+    font-weight: 600;
+    outline: none;
+    position: relative;
+    z-index: 3;
+}
+
+/* Panels */
+.tabs [role="tabpanel"] {
+    display: none;
+    padding: 1rem;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 0 4px 4px 4px;
+
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;/* tried little opacity transition */
+}
+
+/* Show active panel */
+.tabs [role="tabpanel"]:target {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tabs li[role="tab"] a.active {
+    background: #fff;
+    border: 2px solid #333;
+    border-bottom: 1px solid #fff;
+    font-weight: 600;
+    position: relative;
+    z-index: 3;
+}
+
+/* 920718 */
