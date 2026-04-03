@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    width: 100%;
+    font-size: 0.9rem;
+    background: #ffffff;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h2 {
+    margin-bottom: 0.5em;
+}
+
+caption {
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+thead th {
+    padding: 0.6rem;
+    border-bottom: 1px solid #d0d0d0;
+    text-align: center;
+}
+
+tbody td,
+tbody th {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e2e2;
+    text-align: center;
+}
