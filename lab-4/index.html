@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab-4 NHL Standing Table</title>
     <link href="css/tables.css" rel="stylesheet" />
     <!-- Thanks to Tristen Brown for the excellent (dependency-free) table sorting script -->
-	<script src="js/tablesort/tablesort.min.js"></script>
-	<link href="js/tablesort/css/tablesort.css" rel="stylesheet">
-	<script src="js/tables.js" defer></script>
+    <script src="js/tablesort/tablesort.min.js"></script>
+    <link href="js/tablesort/css/tablesort.css" rel="stylesheet">
+    <script src="js/tables.js" defer></script>
 
 </head>
 
 <body>
-    <header>
-		<h1>Standings</h1>
-	</header>
+
     <main>
+        <header>
+            <h1>Standings</h1>
+        </header>
         <table>
             <h2>Eastern</h2>
             <caption>Atlantic</caption>
@@ -57,13 +59,13 @@
                     <td>43</td>
                     <td>274</td>
                     <td>210</td>
-                    <td>+64</td>
+                    <td class="pos">+64</td>
                     <td>24-13-1</td>
                     <td>23-9-5</td>
                     <td>4-2</td>
                     <td>7-1-2</td>
                     <td>W1</td>
-                </tr> 
+                </tr>
 
                 <tr>
                     <td>2</td>
@@ -78,7 +80,7 @@
                     <td>41</td>
                     <td>264</td>
                     <td>225</td>
-                    <td>+39</td>
+                    <td class="pos">+39</td>
                     <td>24-10-4</td>
                     <td>22-12-4</td>
                     <td>5-0</td>
@@ -99,7 +101,7 @@
                     <td>42</td>
                     <td>265</td>
                     <td>236</td>
-                    <td>+29</td>
+                    <td class="pos">+29</td>
                     <td>22-13-2</td>
                     <td>22-8-8</td>
                     <td>2-5</td>
@@ -120,7 +122,7 @@
                     <td>39</td>
                     <td>257</td>
                     <td>235</td>
-                    <td>+22</td>
+                    <td class="pos">+22</td>
                     <td>28-10-1</td>
                     <td>15-15-7</td>
                     <td>4-3</td>
@@ -141,7 +143,7 @@
                     <td>36</td>
                     <td>251</td>
                     <td>231</td>
-                    <td>+20</td>
+                    <td class="pos">+20</td>
                     <td>19-11-6</td>
                     <td>20-15-4</td>
                     <td>3-1</td>
@@ -162,7 +164,7 @@
                     <td>38</td>
                     <td>220</td>
                     <td>225</td>
-                    <td>-5</td>
+                    <td class="neg">-5</td>
                     <td>20-14-3</td>
                     <td>20-13-5</td>
                     <td>2-3</td>
@@ -183,7 +185,7 @@
                     <td>32</td>
                     <td>224</td>
                     <td>248</td>
-                    <td>-24</td>
+                    <td class="neg">-24</td>
                     <td>21-15-3</td>
                     <td>16-20-0</td>
                     <td>5-1</td>
@@ -204,16 +206,17 @@
                     <td>31</td>
                     <td>236</td>
                     <td>268</td>
-                    <td>-32</td>
+                    <td class="neg">-32</td>
                     <td>18-12-8</td>
                     <td>14-19-5</td>
                     <td>1-4</td>
                     <td>4-4-2</td>
                     <td>L1</td>
                 </tr>
-  
+
             </tbody>
         </table>
     </main>
 </body>
+
 </html>
