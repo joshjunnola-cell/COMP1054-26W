@@ -5,12 +5,14 @@
 }
 
 body {
+    /* sets black background */
     background: #0e0d0d;
     margin: 0;
     padding: 0;
 }
 
 main {
+    /* makes some padding around table */
     width: 80%;
     background-color: white;
     margin: 0 auto;
@@ -18,13 +20,14 @@ main {
 }
 
 table {
+    /* gets rid of double border some font changes and width */
     width: 100%;
     font-size: 0.9rem;
-    background: #ffffff;
     border-collapse: collapse;
 }
 
 h1 {
+    /* slight heading changes */
     font-weight: 800;
     margin: 0 auto;
 }
@@ -34,6 +37,7 @@ h2 {
 }
 
 caption {
+    /* moves caption to left and style */
     text-align: left;
     font-weight: 700;
     font-size: 1.1rem;
@@ -46,30 +50,36 @@ tbody tr:nth-child(odd) {
 }
 
 thead th {
-    padding: 0.6rem;
+    /* padding around headers in top row */
+    padding: 1rem;
     border-bottom: 1px solid #d0d0d0;
     text-align: center;
 }
 
 tbody td,
 tbody th {
+    /* spacing for data in body */
     padding: 1rem;
     border-bottom: 1px solid #e2e2e2;
     text-align: center;
 }
 
 .pos {
+    /* targets pos class numbers */
     color: rgb(0, 175, 0);
 }
 
 .neg {
+    /* targets neg class numbers */
     color: rgb(200, 0, 0);
 }
 
 thead th:nth-child(2) {
+    /* targets team and aligns left */
     text-align: left;
 }
 
 tbody th[scope="row"] {
+    /* aligns team names left */
     text-align: left;
 }
