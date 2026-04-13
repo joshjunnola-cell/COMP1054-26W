@@ -16,7 +16,7 @@ body {
 
 .box,
 .glass {
-    /* make boxes pop more */
+    /* border make boxes pop more, simple backdrop-filter and spacing */
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.15);
@@ -26,7 +26,7 @@ body {
 }
 
 .box {
-    /* simple backdrop filter with some spacing */
+    /* additional spacing */
     margin-top: 2rem;
 }
 
