@@ -1,2 +1,39 @@
 @charset "utf-8";
 
+/* Code referenced from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter */
+
+body {
+    /* applies background image and some positioning */
+    min-height: 100vh;
+    background-image: url(images/87540.jpg);
+    /* image from https://wallpaperaccess.com/highest-resolution */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box,
+.glass {
+    /* make boxes pop more */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.box {
+    /* simple backdrop filter with some spacing */
+    margin-top: 2rem;
+}
+
+.glass {
+    /* extra examples for video */
+    margin-top: 8rem;
+    /* backdrop-filter: invert(100%); */
+    /* backdrop-filter: hue-rotate(90deg); */
+    /* backdrop-filter: opacity(5%); */
+}
