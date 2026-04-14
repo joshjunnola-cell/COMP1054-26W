@@ -20,9 +20,18 @@ img {
 body {
   line-height: 1.5;
   min-height: 100vh;
+  position: relative;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(180deg, var(--red), var(--black));
   color: var(--white);
+}
+
+/* Gradient behind everything - pseudo element */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--red), var(--black));
+  z-index: -2;
 }
 
 /* Colour palette is inspired by the caste system of The Society within Red Rising
@@ -58,7 +67,7 @@ header,
 section,
 article,
 aside,
-footer{
+footer {
   margin-bottom: 2rem;
 }
 
@@ -67,8 +76,8 @@ nav ul {
   list-style: none;
 }
 
-nav li + li {
-  margin-top: 0.75;
+nav li+li {
+  margin-top: 0.75rem;
 }
 
 nav a {
@@ -79,5 +88,37 @@ nav a {
 
 /* For desktop */
 @media (min-width: 768px) {
+
+  /* 3 column grid to mimic hierarchy using caste system colours */
+  body {
+    display: grid;
+    grid-template-columns: 80px 260px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+  }
+
+  /* Gold spine (fixed to left side) - pseudo-element */
+  body::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: var(--gold);
+    width: 80px;
+    min-height: 100vh;
+    z-index: -1;
+  }
+
+  nav {
+    grid-column: 2/3;
+    border-right: 2px solid var(--iron);
+    padding: 2rem 1rem;
+  }
+
+  main {
+    grid-column: 3/4;
+    padding: 2rem 2rem;
+  }
 
 }
