@@ -30,7 +30,7 @@ body::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, var(--red), var(--black));
+  background: linear-gradient(180deg, var(--black), var(--red));
   z-index: -2;
 }
 
@@ -86,6 +86,66 @@ nav a {
   font-weight: bold;
 }
 
+/* Header - The Sovereign inspired */
+header {
+  background: linear-gradient(180deg, var(--black), var(--red));
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+}
+
+/* Center's container and set max width for header */
+header .container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Title */
+header h1 {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+/* Subtitle */
+header h2 {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.4rem;
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  color: var(--white);
+  opacity: 0.8;
+  font-size: 0.9rem;
+  margin-bottom: 0.55rem;
+}
+
+header .link-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+}
+
+header .link-github svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
 /* For desktop */
 @media (min-width: 768px) {
 
@@ -108,6 +168,10 @@ nav a {
     width: 80px;
     min-height: 100vh;
     z-index: -1;
+  }
+
+  header {
+    grid-column: 2/4;
   }
 
   nav {
