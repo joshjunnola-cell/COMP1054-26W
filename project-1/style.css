@@ -25,6 +25,7 @@ more info here - https://red-rising.fandom.com/wiki/Color */
   --black: #0A0A0A;
   --iron: #2F2F2F;
   --white: #F5F5F5;
+  --lessLight: #E8E8E8;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them - reused code from https://stylestage.dev/ */
@@ -41,18 +42,19 @@ more info here - https://red-rising.fandom.com/wiki/Color */
 /* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
 /* Gradient behind everything */
 body {
-  background:/* Creates a top layer dark overlay above transparent img above gradient */
+  background:
+    /* Creates a top layer dark overlay above transparent img above gradient */
     linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
     url("images/Copilot_IronRain.png") center 5vh / 80% no-repeat,
     linear-gradient(to bottom, #000 0%, #7a0000 90%);
   background-attachment: scroll;
   background-blend-mode: overlay, screen, normal;
-  backdrop-filter: blur(1px) brightness(0.8) contrast(0.85);
+  backdrop-filter: blur(2px) brightness(0.8) contrast(0.80);
   line-height: 1.5;
   min-height: 100vh;
   position: relative;
   font-family: 'Lato', sans-serif;
-  color: var(--white);
+  color: var(--lessLight);
 }
 
 /* Mobile first layout */
@@ -114,6 +116,7 @@ nav li:nth-child(6) {
   border-left-color: var(--gold);
 }
 
+/* Adds subtle light transition on hover */
 nav a {
   display: block;
   color: var(--gold);
@@ -125,6 +128,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
+
 /* pseudo-class */
 nav a:hover {
   color: var(--white);
@@ -191,14 +195,66 @@ header .link-github svg {
   fill: currentColor;
 }
 
+/* Making typography more consistent */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+p,
+li {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--lessLight);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#about p {
+  padding-bottom: 0.5rem;
+}
+
+/* Spacing around headers in sections/colouring */
+section h2,
+article h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+section h3,
+article h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  opacity: 0.9;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.container ul {
+  display: flex;
+  list-style: none;
+}
+
 /* Article containers */
-#about, #guidelines, #contribute {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 117, 117, 0.3);
-  box-shadow: 0 4px 20px var(--gold);
-  border-radius: 20px;
-  padding: 1rem;
+#about,
+#guidelines,
+#contribute {
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  padding: 1.25rem;
 }
 
 /* For desktop */
@@ -231,7 +287,7 @@ header .link-github svg {
 
   nav {
     grid-column: 2/3;
-    border-right: 2px solid var(--iron);
+    border-right: 3px solid var(--iron);
     padding: 2rem 1rem;
   }
 
