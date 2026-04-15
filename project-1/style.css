@@ -17,24 +17,6 @@ img {
   display: block;
 }
 
-/* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
-/* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
-/* Gradient behind everything */
-body {
-  background: 
-    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
-    url("images/Copilot_IronRain.png") center 5vh / 80% no-repeat,
-    linear-gradient(to bottom, #000 0%, #7a0000 90%);
-  background-attachment: scroll;
-  background-blend-mode: overlay, screen, normal;
-  backdrop-filter: blur(1px) brightness(0.8) contrast(0.85);
-  line-height: 1.5;
-  min-height: 100vh;
-  position: relative;
-  font-family: 'Lato', sans-serif;
-  color: var(--white);
-}
-
 /* Colour palette is inspired by the caste system of The Society within Red Rising
 more info here - https://red-rising.fandom.com/wiki/Color */
 :root {
@@ -55,10 +37,28 @@ more info here - https://red-rising.fandom.com/wiki/Color */
   }
 }
 
+/* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
+/* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
+/* Gradient behind everything */
+body {
+  background:/* Creates a top layer dark overlay above transparent img above gradient */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
+    url("images/Copilot_IronRain.png") center 5vh / 80% no-repeat,
+    linear-gradient(to bottom, #000 0%, #7a0000 90%);
+  background-attachment: scroll;
+  background-blend-mode: overlay, screen, normal;
+  backdrop-filter: blur(1px) brightness(0.8) contrast(0.85);
+  line-height: 1.5;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Lato', sans-serif;
+  color: var(--white);
+}
+
 /* Mobile first layout */
 .container {
-  width: 90%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -73,18 +73,62 @@ footer {
 }
 
 /* Navigation links */
-nav ul {
-  list-style: none;
+nav {
+  display: block;
 }
 
-nav li+li {
-  margin-top: 0.75rem;
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 0;
+}
+
+nav li {
+  list-style: none;
+  border-left: 4px solid var(--iron);
+  padding-left: 0.75rem;
+}
+
+nav li:nth-child(1) {
+  border-left-color: var(--gold);
+}
+
+nav li:nth-child(2) {
+  border-left-color: var(--red);
+}
+
+nav li:nth-child(3) {
+  border-left-color: var(--iron);
+}
+
+nav li:nth-child(4) {
+  border-left-color: var(--white);
+}
+
+nav li:nth-child(5) {
+  border-left-color: var(--red);
+}
+
+nav li:nth-child(6) {
+  border-left-color: var(--gold);
 }
 
 nav a {
+  display: block;
   color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--iron);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
   text-decoration: none;
   font-weight: bold;
+}
+/* pseudo-class */
+nav a:hover {
+  color: var(--white);
+  text-shadow: 0 0 6px var(--gold);
 }
 
 /* Header - The Sovereign inspired */
@@ -147,6 +191,16 @@ header .link-github svg {
   fill: currentColor;
 }
 
+/* Article containers */
+#about, #guidelines, #contribute {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 117, 117, 0.3);
+  box-shadow: 0 4px 20px var(--gold);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
 /* For desktop */
 @media (min-width: 768px) {
 
@@ -162,13 +216,13 @@ header .link-github svg {
   /* Gold spine (fixed to left side) - pseudo-element */
   body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     background: var(--gold);
     width: 80px;
-    min-height: 100vh;
-    z-index: 1;
+    min-height: 100%;
+    z-index: -1;
   }
 
   header {
