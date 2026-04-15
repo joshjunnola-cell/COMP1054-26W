@@ -17,25 +17,22 @@ img {
   display: block;
 }
 
-
 /* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
 /* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
+/* Gradient behind everything */
 body {
-  background-image: url("images/Copilot_IronRain.png");
-  background-size: auto 80%;
-  background-repeat: no-repeat;
-  background-position: center 5vh;
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
+    url("images/Copilot_IronRain.png") center 5vh / 80% no-repeat,
+    linear-gradient(to bottom, #000 0%, #7a0000 90%);
+  background-attachment: scroll;
+  background-blend-mode: overlay, screen, normal;
+  backdrop-filter: blur(1px) brightness(0.8) contrast(0.85);
   line-height: 1.5;
   min-height: 100vh;
   position: relative;
   font-family: 'Lato', sans-serif;
   color: var(--white);
-  z-index: -2;
-}
-
-/* Gradient behind everything - pseudo element */
-html {
-  background: linear-gradient(180deg, var(--black) 30%, var(--red));
 }
 
 /* Colour palette is inspired by the caste system of The Society within Red Rising
@@ -171,7 +168,7 @@ header .link-github svg {
     background: var(--gold);
     width: 80px;
     min-height: 100vh;
-    z-index: -1;
+    z-index: 1;
   }
 
   header {
