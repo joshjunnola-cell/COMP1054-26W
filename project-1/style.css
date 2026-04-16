@@ -273,11 +273,6 @@ article h3 {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-/* .container ul {
-  display: flex;
-  list-style: none;
-} */
-
 /* Article containers */
 #about,
 #guidelines,
@@ -290,6 +285,51 @@ article h3 {
   padding: 1.25rem;
 }
 
+/* List padding */
+#about ul,
+#contribute ol {
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+#about ul li {
+  position: relative;
+  list-style: none;
+  padding-left: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Pseudo-element - Creates small vertical bars beside list items in first section */
+#about ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  height: 10px;
+  width: 6px;
+  background: var(--gold);
+  border-radius: 1px;
+  box-shadow: 0 0 4px rgba(212, 175, 55, 0.6);
+}
+
+#contribute ol {
+  padding-left: 1rem;
+}
+
+/* pseudo-element to create vertical bar beside top section and bottom */
+#about ul::before,
+#contribute ol::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), #5a0080, var(--red));
+  opacity: 0.5;
+  border-radius: 5px;
+}
+
 /* For desktop */
 @media (min-width: 768px) {
 
@@ -297,6 +337,7 @@ article h3 {
   body {
     display: grid;
     grid-template-columns: 80px 260px 1fr;
+    grid-template-rows: auto auto 1fr auto auto auto;
     gap: 2rem;
     padding: 2rem;
     position: relative;
@@ -314,19 +355,43 @@ article h3 {
     z-index: -1;
   }
 
+  /* Setting column positions for all sections in desktop */
   header {
     grid-column: 2/4;
+    grid-row: 1;
   }
 
   nav {
-    grid-column: 2/3;
-    border-right: 3px solid var(--iron);
-    padding: 2rem 1rem;
+    grid-column: 2;
+    grid-row: 2;
+    border-right: 5px solid var(--iron);
+    padding: 2rem 1rem 0 0;
   }
 
   main {
-    grid-column: 3/4;
+    grid-column: 3;
+    grid-row: 2/4;
     padding: 2rem 2rem;
   }
 
+  aside.profile {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  aside#styles {
+    grid-column: 2/4;
+    grid-row: 4;
+  }
+
+  footer.page-footer {
+    grid-column: 2/4;
+    grid-row: 5;
+    margin: 0 auto;
+  }
+
+  #about ul {
+    columns: 3;
+    column-gap: 2rem;
+  }
 }
