@@ -287,7 +287,7 @@ article h3 {
 /* List padding */
 #about ul,
 #contribute ol {
-  padding-bottom: 1rem;
+  padding: 0.5rem 0 1rem 0;
   position: relative;
 }
 
@@ -335,7 +335,7 @@ article h3 {
 }
 
 #styles h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .features {
@@ -378,6 +378,19 @@ article h3 {
   font-weight: 400;
   letter-spacing: 1px;
   font-size: 0.95rem;
+}
+
+/* Hover animation and keyboard focus */
+.features li:hover,
+.features li:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.6);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.features a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+  border-radius: 6px;
 }
 
 /* View All Styles link */
@@ -430,7 +443,6 @@ article h3 {
   vertical-align: middle;
   fill: currentColor;
   margin-right: 0.25rem;
-  ;
 }
 
 .page-footer a {
