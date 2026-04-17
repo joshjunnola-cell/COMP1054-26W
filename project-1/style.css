@@ -329,6 +329,66 @@ article h3 {
   border-radius: 5px;
 }
 
+/* Featured styles section */
+#styles .container {
+  padding: 0.6rem 0.6rem;
+}
+
+#styles h2 {
+  margin-bottom: 0.5rem;
+}
+
+.features {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Make each listed item appear as a card in a row */
+.features li {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0.6rem 0.8rem;
+  margin-left: 1rem;
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  overflow: hidden;
+}
+
+.features li > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* Featured stage name */
+.features a {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+/* Author's name */
+.features li span > span {
+  color: var(--white);
+  opacity: 0.9;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+
+/* View All Styles link */
+.link-allstyles {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  padding-bottom: 2px;
+}
+
 /* Footer style - creates backdrop and bordering */
 .page-footer {
   background: rgba(0, 0, 0, 0.55);
@@ -341,7 +401,7 @@ article h3 {
 }
 
 /* footer container, adjusts positioning */
-.page-footer > .container {
+.page-footer>.container {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -369,30 +429,31 @@ article h3 {
   height: 1rem;
   vertical-align: middle;
   fill: currentColor;
-  margin-right: 0.25rem;;
+  margin-right: 0.25rem;
+  ;
 }
 
 .page-footer a {
   color: var(--lessLight);
   text-decoration: none;
-  border-bottom: 1px dashed rgba(255,255,255,0.2);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
   padding-bottom: 2px;
   transition: color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
 .page-footer a:hover {
   color: var(--gold);
-  border-bottom-color: rgba(212,175,55,0.5);
+  border-bottom-color: rgba(212, 175, 55, 0.5);
   transform: translateY(-2px);
 }
 
 .page-footer a:focus-visible {
-  box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
   border-radius: 6px;
 }
 
 /* For desktop */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
 
   /* 3 column grid to mimic hierarchy using caste system colours */
   body {
