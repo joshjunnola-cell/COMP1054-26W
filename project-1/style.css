@@ -5,6 +5,17 @@
 /* I have used the Red Rising book series by Pierce Brown - https://www.goodreads.com/book/show/15839976-red-rising 
 as my inspiration for this theme. */
 
+/* Colour palette is inspired by the caste system of The Society within Red Rising
+more info here - https://red-rising.fandom.com/wiki/Color */
+:root {
+  --red: #8D0000;
+  --gold: #D4AF37;
+  --black: #0A0A0A;
+  --iron: #2F2F2F;
+  --white: #F5F5F5;
+  --lessLight: #E8E8E8;
+}
+
 /* Basic reset */
 * {
   margin: 0;
@@ -17,17 +28,6 @@ img {
   display: block;
 }
 
-/* Colour palette is inspired by the caste system of The Society within Red Rising
-more info here - https://red-rising.fandom.com/wiki/Color */
-:root {
-  --red: #8D0000;
-  --gold: #D4AF37;
-  --black: #0A0A0A;
-  --iron: #2F2F2F;
-  --white: #F5F5F5;
-  --lessLight: #E8E8E8;
-}
-
 /* Remove all animations and transitions for people that prefer not to see them - reused code from https://stylestage.dev/ */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -37,20 +37,22 @@ more info here - https://red-rising.fandom.com/wiki/Color */
     scroll-behavior: auto !important;
   }
 }
+
+/* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
+/* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
+/* Gradient behind everything */
 html {
   background:
     /* Creates a top layer dark overlay above transparent img above gradient */
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
     url("images/Copilot_IronRain.png") no-repeat center 5vh,
     linear-gradient(to bottom, #000 0%, #7a0000 90%);
   background-size: cover;
   background-attachment: scroll;
-  background-blend-mode: overlay;
-  backdrop-filter: blur(2px) brightness(0.8) contrast(0.80);
+  background-blend-mode: hard-light, screen;
 }
-/* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
-/* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
-/* Gradient behind everything */
+
+/* Base body */
 body {
   line-height: 1.5;
   min-height: 100vh;
@@ -59,7 +61,7 @@ body {
   color: var(--lessLight);
 }
 
-/* Mobile first layout */
+/* Layout containers */
 .container {
   width: 100%;
   max-width: 950px;
@@ -91,7 +93,6 @@ aside,
   text-decoration: none;
   z-index: 999;
   transition: top 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 /* slides down into view */
@@ -131,15 +132,10 @@ a:visited {
 }
 
 /* Navigation links */
-nav {
-  display: block;
-}
-
 nav ul {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-left: 0;
 }
 
 nav li {
@@ -181,8 +177,6 @@ nav a {
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--iron);
   transition: color 0.2s ease, text-shadow 0.2s ease;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* pseudo-class */
@@ -237,7 +231,6 @@ header .link-github {
   gap: 0.35rem;
   color: var(--gold);
   font-size: 0.85rem;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 1px solid var(--gold);
@@ -263,7 +256,7 @@ li {
   line-height: 1.6;
   font-size: 1rem;
   color: var(--lessLight);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
 }
 
 #about p {
@@ -368,8 +361,12 @@ article h3 {
 
 /* Currently Staged Style spacing and styles */
 .profile {
-  padding-left: 1rem;
+  padding: 1rem;
   letter-spacing: 0.6px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 12px;
 }
 
 .profile li {
@@ -392,7 +389,6 @@ article h3 {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.2));
   border: 1px solid rgba(255, 255, 255, 0.04);
   padding: 0.6rem 0.8rem;
-  margin-left: 1rem;
   width: 250px;
   border-radius: 10px;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -513,9 +509,9 @@ article h3 {
   /* 3 column grid to mimic hierarchy using caste system colours */
   body {
     display: grid;
-    grid-template-columns: 80px 260px 1fr;
+    grid-template-columns: 80px 260px 1fr 260px;
     grid-template-rows: auto auto 1fr auto auto auto;
-    padding: 2rem 4rem 2rem 2rem;
+    padding: 2rem;
     position: relative;
   }
 
@@ -533,7 +529,7 @@ article h3 {
 
   /* Setting column positions for all sections in desktop */
   header {
-    grid-column: 2/4;
+    grid-column: 2/5;
     grid-row: 1;
   }
 
@@ -541,7 +537,7 @@ article h3 {
     grid-column: 2;
     grid-row: 2;
     border-right: 5px solid var(--iron);
-    padding: 2rem 1rem 0 0;
+    padding: 2rem;
   }
 
   main {
@@ -551,22 +547,26 @@ article h3 {
   }
 
   .profile {
-    grid-column: 2;
-    grid-row: 3;
+    position: fixed;
+    right: 3rem;
+    bottom: 1rem;
+    align-self: start;
+    z-index: 10;
   }
 
   #styles {
-    grid-column: 2/4;
+    grid-column: 2/5;
     grid-row: 4;
   }
 
   .features {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    justify-items: center;
   }
 
   .page-footer {
-    grid-column: 2/4;
+    grid-column: 2/5;
     grid-row: 5;
     margin: 0 auto;
   }
