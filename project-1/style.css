@@ -37,19 +37,21 @@ more info here - https://red-rising.fandom.com/wiki/Color */
     scroll-behavior: auto !important;
   }
 }
-
+html {
+  background:
+    /* Creates a top layer dark overlay above transparent img above gradient */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url("images/Copilot_IronRain.png") no-repeat center 5vh,
+    linear-gradient(to bottom, #000 0%, #7a0000 90%);
+  background-size: cover;
+  background-attachment: scroll;
+  background-blend-mode: overlay;
+  backdrop-filter: blur(2px) brightness(0.8) contrast(0.80);
+}
 /* Overlay inspired by https://red-rising.fandom.com/wiki/Iron_Rain */
 /* Created overlay img using Copilot https://copilot.microsoft.com/shares/yxroHjE78bXvJa9m48Xqp */
 /* Gradient behind everything */
 body {
-  background:
-    /* Creates a top layer dark overlay above transparent img above gradient */
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.6)),
-    url("images/Copilot_IronRain.png") center 5vh / 80% no-repeat,
-    linear-gradient(to bottom, #000 0%, #7a0000 90%);
-  background-attachment: scroll;
-  background-blend-mode: overlay, screen, normal;
-  backdrop-filter: blur(2px) brightness(0.8) contrast(0.80);
   line-height: 1.5;
   min-height: 100vh;
   position: relative;
@@ -70,7 +72,7 @@ header,
 section,
 article,
 aside,
-footer {
+.page-footer {
   margin-bottom: 2rem;
 }
 
@@ -351,6 +353,10 @@ article h3 {
   border-radius: 5px;
 }
 
+#files a {
+  margin-right: 1rem;
+}
+
 /* Featured styles section */
 #styles .container {
   padding: 0.6rem 0.6rem;
@@ -360,8 +366,22 @@ article h3 {
   margin-bottom: 1rem;
 }
 
-.features {
+/* Currently Staged Style spacing and styles */
+.profile {
+  padding-left: 1rem;
+  letter-spacing: 0.6px;
+}
+
+.profile li {
   list-style: none;
+  padding-left: 0.5rem;
+}
+
+.profile li span ~ span {
+  padding-left: 0.2rem;
+}
+
+.features {
   margin: 0.5rem 0 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -436,7 +456,7 @@ article h3 {
 }
 
 /* footer container, adjusts positioning */
-.page-footer>.container {
+.page-footer > .container {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -455,6 +475,7 @@ article h3 {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -494,7 +515,7 @@ article h3 {
     display: grid;
     grid-template-columns: 80px 260px 1fr;
     grid-template-rows: auto auto 1fr auto auto auto;
-    padding: 2rem;
+    padding: 2rem 4rem 2rem 2rem;
     position: relative;
   }
 
@@ -539,7 +560,7 @@ article h3 {
     grid-row: 4;
   }
 
-  #styles .features {
+  .features {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
