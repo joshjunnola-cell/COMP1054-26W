@@ -415,8 +415,41 @@ blockquote strong {
   padding-left: 0.5rem;
 }
 
-.profile li span~span {
+.profile li span ~ span {
   padding-left: 0.2rem;
+}
+
+/* Currently staged style pseudo element and class selectors to change text */
+.profile-title span:last-child,
+.profile-author span:last-child,
+.profile-twitter span:last-child,
+.profile-website span:last-child {
+  visibility: hidden;
+  font-size: 0;
+}
+
+.profile-title span:last-child::after,
+.profile-author span:last-child::after,
+.profile-twitter span:last-child::after,
+.profile-website span:last-child::after {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  visibility: visible;
+}
+
+.profile-title span:last-child::after {
+  content: "Iron Rain";
+  color: var(--gold);
+}
+
+.profile-author span:last-child::after {
+  content: "Joshua Junnola";
+  color: var(--gold);
+}
+
+.profile-twitter span:last-child::after,
+.profile-website span:last-child::after {
+  content: "N/A";
 }
 
 .features {
