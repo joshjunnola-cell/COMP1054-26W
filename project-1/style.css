@@ -99,7 +99,7 @@ aside,
 .skip-link:focus {
   top: 1rem;
   outline: none;
-  box-shadow: 
+  box-shadow:
     0 0 10px rgba(212, 175, 55, 0.6),
     0 0 20px rgba(212, 175, 55, 0.4);
 }
@@ -129,6 +129,15 @@ a:hover {
 a:visited {
   color: #b03030;
   border-bottom-color: #b03030;
+}
+
+/* Nav background */
+nav {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 25px rgba(105, 105, 105, 0.3);
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
 }
 
 /* Navigation links */
@@ -302,9 +311,9 @@ article h3 {
 }
 
 /* List padding */
-#about ul,
-#contribute ol {
+#about ul {
   padding: 0.5rem 0 1rem 0;
+  margin: 1rem;
   position: relative;
 }
 
@@ -313,6 +322,12 @@ article h3 {
   list-style: none;
   padding-left: 1rem;
   margin-bottom: 0.2rem;
+}
+
+#contribute ol {
+  position: relative;
+  padding-left: 1rem;
+  margin: 1rem
 }
 
 /* Pseudo-element - Creates small vertical bars beside list items in first section */
@@ -328,8 +343,34 @@ article h3 {
   box-shadow: 0 0 4px rgba(212, 175, 55, 0.6);
 }
 
-#contribute ol {
-  padding-left: 1rem;
+/* Targets "How it Works" */
+blockquote strong {
+  font-size: 1.1rem;
+  border-bottom: 3px solid rgba(135, 11, 0, 0.7);
+  margin-right: 0.2rem;
+}
+
+/* Guideline specific styles */
+#guidelines .container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Targets "Review full guidelines" */
+#guidelines .container > a:last-child {
+  display: inline-block;
+  margin: 1rem auto 0;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 0.6rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.2));
+  transition: color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+#guidelines .container > a:last-child:hover {
+  color: var(--gold);
+  border-bottom-color: rgba(212, 175, 55, 0.8);
+  transform: translateY(-3px);
 }
 
 /* pseudo-element to create vertical bar beside top section and bottom */
@@ -365,7 +406,7 @@ article h3 {
   letter-spacing: 0.6px;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(212,175,55,0.25);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   border-radius: 12px;
 }
 
@@ -374,7 +415,7 @@ article h3 {
   padding-left: 0.5rem;
 }
 
-.profile li span ~ span {
+.profile li span~span {
   padding-left: 0.2rem;
 }
 
@@ -418,7 +459,7 @@ article h3 {
   font-size: 0.95rem;
 }
 
-/* Hover animation and keyboard focus */
+/* Hover animation and keyboard focus psuedo-classes */
 .features li:hover,
 .features li:focus-within {
   transform: translateY(-4px);
@@ -434,9 +475,9 @@ article h3 {
 /* View All Styles link */
 .link-allstyles {
   display: inline-block;
-  margin-top: 0.6rem;
+  margin: 0.6rem 0 1rem 0;
   font-weight: 700;
-  border-bottom: 1px solid rgba(212,175,55,0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   padding-bottom: 2px;
 }
 
@@ -484,6 +525,7 @@ article h3 {
   margin-right: 0.25rem;
 }
 
+/* Page footer styles includes psuedo classes */
 .page-footer a {
   color: var(--lessLight);
   text-decoration: none;
