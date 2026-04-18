@@ -265,7 +265,7 @@ li {
   line-height: 1.6;
   font-size: 1rem;
   color: var(--lessLight);
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
 }
 
 #about p {
@@ -420,18 +420,12 @@ blockquote strong {
 }
 
 /* Currently staged style pseudo element and class selectors to change text */
-.profile-title span:last-child,
-.profile-author span:last-child,
-.profile-twitter span:last-child,
-.profile-website span:last-child {
+.profile li span:last-child {
   visibility: hidden;
   font-size: 0;
 }
 
-.profile-title span:last-child::after,
-.profile-author span:last-child::after,
-.profile-twitter span:last-child::after,
-.profile-website span:last-child::after {
+.profile li span:last-child::after {
   font-size: 1rem;
   letter-spacing: 1px;
   visibility: visible;
@@ -579,7 +573,7 @@ blockquote strong {
 }
 
 /* For desktop */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
 
   /* 3 column grid to mimic hierarchy using caste system colours */
   body {
