@@ -446,6 +446,7 @@ blockquote strong {
   content: "N/A";
 }
 
+/* Featured styles */
 .features {
   margin: 0.5rem 0 0;
   display: grid;
